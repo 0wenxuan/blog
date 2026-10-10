@@ -2,20 +2,180 @@
 layout: default
 ---
 <section id="top" class="wrap hero" aria-labelledby="hero-title">
-  <div>
-    <p class="eyebrow">Personal blog · {{ 'now' | date: '%Y' }}</p>
-    <h1 id="hero-title">你好，我是<br>{{ site.title | split: '·' | first | strip }}。</h1>
-    <p class="hero-copy">我在这里记录正在学的东西、做过的小项目，还有一些不想忘掉的想法。写得不快，但会一直写下去。</p>
+  <div class="hero-text">
+    <p class="eyebrow">Episode 01 · Personal blog</p>
+    <h1 id="hero-title">你好，我是<br><span class="hero-name">{{ site.title | split: '·' | first | strip }}</span>。</h1>
+    <p class="hero-tag">怪盗猫 ・ 夜间出没</p>
+    <div class="bubble">
+      <p>我在这里记录正在学的东西、做过的小项目，还有一些不想忘掉的想法。写得不快，但会一直写下去。</p>
+    </div>
     <div class="hero-actions">
       <a class="button primary" href="#writing">读读我的文章</a>
       <a class="button secondary" href="https://github.com/{{ site.author.github }}">我的 GitHub</a>
     </div>
   </div>
-  <div class="hero-card" aria-label="个人头像占位图"><div class="avatar">OW</div></div>
+
+  <div class="hero-art">
+    <div class="panel-art">
+      <svg viewBox="0 0 480 560" role="img" aria-label="漫画风插画：一只戴着白色礼帽与单片眼镜的黑猫，披着红色斗篷坐在满月前，四周飘着扑克牌与猫爪印">
+        <defs>
+          <radialGradient id="night" cx="50%" cy="42%" r="76%">
+            <stop offset="0" stop-color="#35333f"/>
+            <stop offset="1" stop-color="#111017"/>
+          </radialGradient>
+          <pattern id="tone" width="9" height="9" patternUnits="userSpaceOnUse">
+            <circle cx="2.2" cy="2.2" r="1.5" fill="#f4efe3" opacity=".15"/>
+          </pattern>
+          <clipPath id="frame"><rect x="0" y="0" width="480" height="560"/></clipPath>
+          <g id="paw">
+            <ellipse cx="0" cy="9" rx="9.5" ry="8"/>
+            <circle cx="-9.6" cy="-2.6" r="4"/>
+            <circle cx="-3.2" cy="-8.4" r="4.2"/>
+            <circle cx="3.6" cy="-8.2" r="4.2"/>
+            <circle cx="9.8" cy="-2.2" r="3.7"/>
+          </g>
+        </defs>
+
+        <g clip-path="url(#frame)">
+          <rect width="480" height="560" fill="url(#night)"/>
+
+          <!-- 满月的光爆放射线 -->
+          <g fill="#f4efe3" opacity=".09">
+            <rect x="236" y="-260" width="9" height="510"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(30 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(60 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(90 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(120 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(150 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(180 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(210 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(240 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(270 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(300 240 250)"/>
+            <rect x="236" y="-260" width="9" height="510" transform="rotate(330 240 250)"/>
+          </g>
+
+          <!-- 夜空网点纸 -->
+          <rect width="480" height="560" fill="url(#tone)"/>
+
+          <!-- 星 -->
+          <g fill="#f6f1e3">
+            <circle cx="58" cy="72" r="3"/>
+            <circle cx="404" cy="56" r="2.5"/>
+            <circle cx="118" cy="176" r="2"/>
+            <circle cx="428" cy="182" r="3"/>
+            <circle cx="46" cy="330" r="2.5"/>
+            <circle cx="436" cy="392" r="2"/>
+          </g>
+
+          <!-- 月亮 -->
+          <circle cx="240" cy="252" r="152" fill="#f6f1e3"/>
+          <g fill="#e2dbc8" opacity=".8">
+            <circle cx="168" cy="182" r="24"/>
+            <circle cx="322" cy="300" r="32"/>
+            <circle cx="196" cy="342" r="16"/>
+          </g>
+
+          <!-- 月面上的猫爪印 -->
+          <g fill="#17161c" opacity=".9">
+            <use href="#paw" transform="translate(126 400) rotate(-16) scale(.85)"/>
+            <use href="#paw" transform="translate(162 350) rotate(-24) scale(.75)"/>
+            <use href="#paw" transform="translate(344 370) rotate(14) scale(.85)"/>
+            <use href="#paw" transform="translate(316 322) rotate(24) scale(.75)"/>
+          </g>
+
+          <!-- 怪盗的斗篷（在身体之后） -->
+          <g stroke="#17161c" stroke-width="4" stroke-linejoin="round">
+            <path fill="#b02a24" d="M206 262 C150 272 118 320 108 384 L158 372 C164 330 178 292 200 274 Z"/>
+            <path fill="#d8382f" d="M274 262 C330 272 362 320 372 384 L322 372 C316 330 302 292 280 274 Z"/>
+          </g>
+
+          <!-- 猫：身体与尾巴 -->
+          <g fill="#17161c">
+            <path d="M240 250 C274 250 294 292 296 344 L184 344 C186 292 206 250 240 250 Z"/>
+            <path d="M292 330 C338 332 356 294 344 256" fill="none" stroke="#17161c" stroke-width="17" stroke-linecap="round"/>
+            <circle cx="240" cy="228" r="46"/>
+          </g>
+
+          <!-- 白色礼帽 -->
+          <g stroke="#17161c" stroke-width="4" stroke-linejoin="round">
+            <rect x="208" y="104" width="64" height="86" rx="4" fill="#f6f1e3"/>
+            <rect x="208" y="158" width="64" height="16" fill="#17161c"/>
+            <rect x="208" y="174" width="64" height="4" fill="#d8382f" stroke="none"/>
+            <ellipse cx="240" cy="190" rx="52" ry="12" fill="#f6f1e3"/>
+          </g>
+
+          <!-- 猫耳：压在帽檐之上 -->
+          <g fill="#17161c">
+            <path d="M206 198 L180 136 L244 176 Z"/>
+            <path d="M274 198 L300 136 L236 176 Z"/>
+          </g>
+
+          <!-- 露出的左眼（朱红瞳） -->
+          <ellipse cx="216" cy="226" rx="12" ry="8" fill="#d8382f"/>
+          <ellipse cx="216" cy="226" rx="3" ry="7.5" fill="#17161c"/>
+
+          <!-- 单片眼镜：罩住右眼，镜片内一枚黑桃 -->
+          <circle cx="266" cy="226" r="24" fill="#f6f1e3" opacity=".16"/>
+          <circle cx="266" cy="226" r="24" fill="none" stroke="#f6f1e3" stroke-width="4"/>
+          <path fill="none" stroke="#f6f1e3" stroke-width="2.4" d="M266 250 C268 272 262 290 250 302"/>
+          <path fill="#d8382f" transform="translate(266 226) scale(1.02)" d="M0-13 C7-4 13 3 13 8.5 C13 12.6 10 15 6.8 15 C4.6 15 3 14 2.2 12.6 L3.4 19 L-3.4 19 L-2.2 12.6 C-3 14 -4.6 15 -6.8 15 C-10 15 -13 12.6 -13 8.5 C-13 3 -7 -4 0 -13 Z"/>
+
+          <!-- 领结 -->
+          <path fill="#d8382f" stroke="#17161c" stroke-width="3" stroke-linejoin="round" d="M224 276 L240 268 L256 276 L240 284 Z"/>
+
+          <!-- 飘出的扑克牌 -->
+          <g stroke="#17161c" stroke-width="3">
+            <g transform="translate(96 202) rotate(-22)">
+              <rect x="-26" y="-36" width="52" height="72" rx="6" fill="#f6f1e3"/>
+              <path fill="#d8382f" d="M0-13 C7-4 13 3 13 8.5 C13 12.6 10 15 6.8 15 C4.6 15 3 14 2.2 12.6 L3.4 19 L-3.4 19 L-2.2 12.6 C-3 14 -4.6 15 -6.8 15 C-10 15 -13 12.6 -13 8.5 C-13 3 -7 -4 0 -13 Z"/>
+            </g>
+            <g transform="translate(396 148) rotate(18)">
+              <rect x="-24" y="-34" width="48" height="68" rx="6" fill="#f6f1e3"/>
+              <path fill="#17161c" d="M0-11 L9-2 C9 2 5 5 2 3 L3 9 L-3 9 L-2 3 C-5 5 -9 2 -9-2 C-9-5 -4-8 0-11 Z" transform="translate(0 4)"/>
+            </g>
+            <g transform="translate(418 344) rotate(-12)">
+              <rect x="-22" y="-30" width="44" height="60" rx="6" fill="#f6f1e3"/>
+              <path fill="#d8382f" d="M0-12 L14 6 L-14 6 Z" transform="translate(0 2)"/>
+            </g>
+          </g>
+
+          <!-- 扑克牌的飞行虚线 -->
+          <g fill="none" stroke="#f6f1e3" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 11" opacity=".65">
+            <path d="M44 300 C74 276 100 250 124 224"/>
+            <path d="M436 208 C420 190 412 176 404 172"/>
+            <path d="M400 424 C408 400 414 380 418 366"/>
+          </g>
+
+          <!-- 前景屋顶剪影 -->
+          <path fill="#0c0b10" d="M0 560 V470 H44 V436 H92 V474 H140 V444 H190 V482 H238 V452 H288 V488 H336 V458 H384 V480 H432 V448 H480 V560 Z"/>
+          <g fill="#f6f1e3" opacity=".55">
+            <rect x="58" y="450" width="10" height="12"/>
+            <rect x="156" y="458" width="10" height="12"/>
+            <rect x="252" y="466" width="10" height="12"/>
+            <rect x="350" y="472" width="10" height="12"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <span class="sfx sfx-a" aria-hidden="true">ニャ</span>
+    <span class="sfx sfx-b" aria-hidden="true">ドン</span>
+    <span class="stamp" aria-hidden="true">怪盗<br>猫組</span>
+    <p class="panel-caption">Phantom cat · 夜の見張り番</p>
+  </div>
 </section>
 
+<div class="wrap"><div class="paw-trail" aria-hidden="true">
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
+</div></div>
+
 <section id="writing" class="wrap section" aria-labelledby="writing-title">
-  <div class="section-heading"><div><p class="eyebrow">Latest notes</p><h2 id="writing-title">最近写了什么</h2><div class="rule"></div></div><p>文章都是 _posts 里的 Markdown 文件，推到 GitHub 后自动发布。</p></div>
+  <div class="section-heading">
+    <div><p class="eyebrow">Scene 02 · Latest notes</p><h2 id="writing-title">最近写了什么</h2><div class="rule"></div></div>
+    <p>文章都是 _posts 里的 Markdown 文件，推到 GitHub 后自动发布。</p>
+  </div>
   <div class="article-grid">
     {% for post in site.posts limit: 6 %}
     <article class="card">
@@ -29,10 +189,13 @@ layout: default
 </section>
 
 <section id="projects" class="wrap section" aria-labelledby="projects-title">
-  <div class="section-heading"><div><p class="eyebrow">Selected work</p><h2 id="projects-title">做过的小项目</h2><div class="rule"></div></div><p>这几个位置先留给正在做的项目，整理好之后会陆续换上来。</p></div>
+  <div class="section-heading">
+    <div><p class="eyebrow">Scene 03 · Selected work</p><h2 id="projects-title">做过的小项目</h2><div class="rule"></div></div>
+    <p>这几个位置先留给正在做的项目，整理好之后会陆续换上来。</p>
+  </div>
   <div class="project-grid">
-    <article class="card"><div class="card-meta">PROJECT 01</div><h3>项目占位一</h3><p>这里写一句话说明：它解决什么问题、用了什么、现在到哪一步了。</p><a class="card-link" href="#">查看项目 →</a></article>
-    <article class="card"><div class="card-meta">PROJECT 02</div><h3>项目占位二</h3><p>如果项目有在线地址，把链接换到下面这个按钮上；没有就指向仓库。</p><a class="card-link" href="#">查看项目 →</a></article>
-    <article class="card"><div class="card-meta">PROJECT 03</div><h3>项目占位三</h3><p>也可以放一个还没做完、但值得继续记录的想法。</p><a class="card-link" href="#">了解更多 →</a></article>
+    <article class="card"><div class="card-meta">Project 01</div><h3>项目占位一</h3><p>这里写一句话说明：它解决什么问题、用了什么、现在到哪一步了。</p><a class="card-link" href="#">查看项目 →</a></article>
+    <article class="card"><div class="card-meta">Project 02</div><h3>项目占位二</h3><p>如果项目有在线地址，把链接换到下面这个按钮上；没有就指向仓库。</p><a class="card-link" href="#">查看项目 →</a></article>
+    <article class="card"><div class="card-meta">Project 03</div><h3>项目占位三</h3><p>也可以放一个还没做完、但值得继续记录的想法。</p><a class="card-link" href="#">了解更多 →</a></article>
   </div>
 </section>

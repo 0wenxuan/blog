@@ -17,3 +17,6 @@ _preview.html
 # 系统文件
 .DS_Store
 Thumbs.db
+
+# 本地预览截图
+_shots/
