@@ -6,7 +6,7 @@ layout: default
     <p class="eyebrow">Episode 01 · Personal blog</p>
     <h1 id="hero-title">你好，我是<br><span class="hero-name">{{ site.title | split: '·' | first | strip }}</span>。</h1>
     <ul class="hero-marks">
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#17161c" d="M7.6 15.4 L8.9 4.6 C9 3.7 9.8 3 10.7 3 L13.3 3 C14.2 3 15 3.7 15.1 4.6 L16.4 15.4 Z"/><path fill="#d8382f" d="M8 11.6 L16 11.6 L16.4 15.4 L7.6 15.4 Z"/><rect x="2.6" y="15" width="18.8" height="3.2" rx="1.6" fill="#17161c"/></svg>怪盗</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#17161c" d="M7.2 10.6 L4.4 3.4 L11.4 7 Z"/><path fill="#17161c" d="M16.8 10.6 L19.6 3.4 L12.6 7 Z"/><circle cx="12" cy="14.6" r="7.6" fill="#17161c"/><ellipse cx="9.4" cy="14.2" rx="1.6" ry="2" fill="#d8382f"/><ellipse cx="14.6" cy="14.2" rx="1.6" ry="2" fill="#d8382f"/><path fill="#d8382f" d="M12 17.8 L13.2 19.2 L10.8 19.2 Z"/></svg>猫</li>
     </ul>
     <div class="bubble">
       <p>我在这里记录正在学的东西、做过的小项目，还有一些不想忘掉的想法。写得不快，但会一直写下去。</p>
@@ -18,235 +18,140 @@ layout: default
   </div>
 
   <div class="hero-art">
-    <!-- 人物立绘：月夜屋顶上的怪盗 -->
+    <!-- 人物立绘：朱红圆月前的黑猫 -->
     <div class="panel-art">
-      <svg viewBox="0 0 360 480" role="img" aria-label="漫画人物立绘：月夜屋顶上的怪盗，白色礼帽与单片眼镜、披风在身后展开、白手套与扑克牌">
+      <svg viewBox="0 0 360 480" role="img" aria-label="漫画人物立绘：一只黑猫端坐在朱红圆月前，白色前爪、长尾卷起，身旁有一串猫爪印">
         <defs>
-          <radialGradient id="kk-night" cx="72%" cy="26%" r="88%">
-            <stop offset="0" stop-color="#3d3a4c"/>
-            <stop offset="1" stop-color="#100e15"/>
-          </radialGradient>
-          <pattern id="kk-tone" width="9" height="9" patternUnits="userSpaceOnUse">
-            <circle cx="2.2" cy="2.2" r="1.5" fill="#f4efe3" opacity=".14"/>
+          <pattern id="ct-tone" width="8" height="8" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="1.3" fill="#17161c" opacity=".17"/>
           </pattern>
-          <pattern id="kk-tone-ink" width="8" height="8" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1.3" fill="#17161c" opacity=".18"/>
+          <pattern id="ct-tone-light" width="9" height="9" patternUnits="userSpaceOnUse">
+            <circle cx="2.2" cy="2.2" r="1.5" fill="#f6f1e3" opacity=".24"/>
           </pattern>
-          <g id="kk-spade">
-            <path d="M0-11 C0-11 -9-4.4 -9 .6 C-9 3.6 -7 5.6 -4.6 5.6 C-3 5.6 -1.8 4.8 -1.2 3.6 L-2.6 8.6 L2.6 8.6 L1.2 3.6 C1.8 4.8 3 5.6 4.6 5.6 C7 5.6 9 3.6 9 .6 C9-4.4 0-11 0-11 Z"/>
+          <g id="ct-paw">
+            <ellipse cx="0" cy="9" rx="9.5" ry="8"/>
+            <circle cx="-9.6" cy="-2.6" r="4"/>
+            <circle cx="-3.2" cy="-8.4" r="4.2"/>
+            <circle cx="3.6" cy="-8.2" r="4.2"/>
+            <circle cx="9.8" cy="-2.2" r="3.7"/>
           </g>
-          <g id="kk-heart">
-            <path d="M0-12 C6-4 12 2 12 7 C12 10.6 9.4 13 6.4 13 C4.4 13 3 12.2 2.2 11 L3.2 17 L-3.2 17 L-2.2 11 C-3 12.2 -4.4 13 -6.4 13 C-9.4 13 -12 10.6 -12 7 C-12 2 -6-4 0-12 Z"/>
-          </g>
-          <clipPath id="kk-frame"><rect x="0" y="0" width="360" height="480"/></clipPath>
+          <clipPath id="ct-frame"><rect x="0" y="0" width="360" height="480"/></clipPath>
         </defs>
-        <g clip-path="url(#kk-frame)">
-          <!-- 夜空 -->
-          <rect width="360" height="480" fill="url(#kk-night)"/>
+        <g clip-path="url(#ct-frame)">
+          <!-- 纸底与网点 -->
+          <rect width="360" height="480" fill="#f6f1e3"/>
+          <rect width="360" height="480" fill="url(#ct-tone)"/>
 
-          <!-- 月光放射线 -->
-          <g fill="#f4efe3" opacity=".075" transform="translate(286 92)">
-            <rect x="-4" y="-300" width="8" height="300"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(30)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(60)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(90)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(120)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(150)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(180)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(210)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(240)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(270)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(300)"/>
-            <rect x="-4" y="-300" width="8" height="300" transform="rotate(330)"/>
+          <!-- 朱红圆月 -->
+          <circle cx="180" cy="200" r="132" fill="#d8382f"/>
+          <circle cx="180" cy="200" r="132" fill="url(#ct-tone-light)"/>
+
+          <!-- 地面 -->
+          <rect x="0" y="405" width="360" height="75" fill="#efe8d8"/>
+          <rect x="0" y="405" width="360" height="75" fill="url(#ct-tone)"/>
+          <rect x="0" y="399" width="360" height="5" fill="#17161c"/>
+          <!-- 地面上的爪印 -->
+          <g fill="#17161c" opacity=".82">
+            <use href="#ct-paw" transform="translate(54 430) rotate(-12) scale(.92)"/>
+            <use href="#ct-paw" transform="translate(112 446) rotate(-22) scale(.72)"/>
+            <use href="#ct-paw" transform="translate(304 436) rotate(16) scale(.92)"/>
           </g>
 
-          <!-- 满月 -->
-          <circle cx="286" cy="92" r="60" fill="#f6f1e3"/>
-          <circle cx="262" cy="72" r="11" fill="#e2dbc8"/>
-          <circle cx="304" cy="114" r="14" fill="#e2dbc8"/>
-          <circle cx="292" cy="58" r="7" fill="#e2dbc8"/>
+          <!-- ===== 猫：尾巴（最底层） ===== -->
+          <path d="M232 382 C280 388 308 358 302 320 C297 288 270 279 256 296 C246 309 251 324 264 328"
+                fill="none" stroke="#17161c" stroke-width="24" stroke-linecap="round"/>
 
-          <!-- 星 -->
-          <g fill="#f6f1e3">
-            <circle cx="40" cy="58" r="2.6"/>
-            <circle cx="104" cy="30" r="2"/>
-            <circle cx="72" cy="140" r="2.2"/>
-            <circle cx="152" cy="46" r="2.4"/>
-            <circle cx="20" cy="212" r="2"/>
-            <circle cx="330" cy="242" r="2.2"/>
-            <circle cx="242" cy="196" r="1.8"/>
+          <!-- ===== 身体（坐姿梨形） ===== -->
+          <path fill="#17161c" d="M180 230 C146 232 126 268 120 316 C116 352 118 384 122 402 L238 402
+                C242 384 244 352 240 316 C234 268 214 232 180 230 Z"/>
+
+          <!-- ===== 胸前的白毛 ===== -->
+          <path fill="#f6f1e3" opacity=".95" d="M180 236 C167 246 160 262 158 278 C169 288 191 288 202 278 C200 262 193 246 180 236 Z"/>
+
+          <!-- ===== 前腿（负空间白线）与白爪 ===== -->
+          <g fill="none" stroke="#f6f1e3" stroke-width="2.8" opacity=".8" stroke-linecap="round">
+            <path d="M180 296 L180 392"/>
+            <path d="M150 300 C144 338 143 374 146 396"/>
+            <path d="M210 300 C216 338 217 374 214 396"/>
+          </g>
+          <ellipse cx="157" cy="398" rx="19" ry="10" fill="#f6f1e3" stroke="#17161c" stroke-width="2.6"/>
+          <ellipse cx="203" cy="398" rx="19" ry="10" fill="#f6f1e3" stroke="#17161c" stroke-width="2.6"/>
+          <g stroke="#17161c" stroke-width="1.8" stroke-linecap="round" fill="none">
+            <path d="M157 390 L157 406"/>
+            <path d="M150 392 L149 405"/>
+            <path d="M164 392 L165 405"/>
+            <path d="M203 390 L203 406"/>
+            <path d="M196 392 L195 405"/>
+            <path d="M210 392 L211 405"/>
           </g>
 
-          <!-- 远景楼群 -->
-          <path fill="#0c0b10" d="M0 424 V356 H28 V336 H56 V362 H84 V344 H118 V368 H150 V350 H186 V370 H218 V346 H252 V364 H286 V338 H318 V360 H348 V348 H360 V424 Z"/>
-          <!-- 远处楼窗 -->
-          <g fill="#f6f1e3" opacity=".5">
-            <rect x="34" y="346" width="5" height="7"/>
-            <rect x="46" y="346" width="5" height="7"/>
-            <rect x="126" y="354" width="5" height="7"/>
-            <rect x="138" y="354" width="5" height="7"/>
-            <rect x="292" y="348" width="5" height="7"/>
-            <rect x="304" y="348" width="5" height="7"/>
+          <!-- ===== 耳朵（在头后） ===== -->
+          <path fill="#17161c" d="M134 144 L116 82 L174 118 Z"/>
+          <path fill="#17161c" d="M226 144 L244 82 L186 118 Z"/>
+          <path fill="#d8382f" opacity=".92" d="M138 136 L127 98 L163 120 Z"/>
+          <path fill="#d8382f" opacity=".92" d="M222 136 L233 98 L197 120 Z"/>
+
+          <!-- ===== 头 ===== -->
+          <circle cx="180" cy="176" r="58" fill="#17161c"/>
+
+          <!-- ===== 眼、鼻、嘴 ===== -->
+          <ellipse cx="152" cy="170" rx="18" ry="20" fill="#f6f1e3"/>
+          <ellipse cx="152" cy="172" rx="6.5" ry="17" fill="#2b4bb5"/>
+          <circle cx="146" cy="162" r="4" fill="#ffffff"/>
+          <ellipse cx="208" cy="170" rx="18" ry="20" fill="#f6f1e3"/>
+          <ellipse cx="208" cy="172" rx="6.5" ry="17" fill="#2b4bb5"/>
+          <circle cx="202" cy="162" r="4" fill="#ffffff"/>
+          <path fill="#d8382f" d="M180 194 L187.5 203 L172.5 203 Z"/>
+          <path d="M180 203 C180 210 172 214.5 165 211" fill="none" stroke="#f6f1e3" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M180 203 C180 210 188 214.5 195 211" fill="none" stroke="#f6f1e3" stroke-width="2.6" stroke-linecap="round"/>
+
+          <!-- ===== 胡须 ===== -->
+          <g fill="none" stroke="#f6f1e3" stroke-width="2.6" stroke-linecap="round" opacity=".92">
+            <path d="M123 183 L80 172"/>
+            <path d="M125 195 L78 195"/>
+            <path d="M130 207 L84 218"/>
+            <path d="M237 183 L280 172"/>
+            <path d="M235 195 L282 195"/>
+            <path d="M230 207 L276 218"/>
           </g>
-
-          <!-- 网点纸 -->
-          <rect width="360" height="480" fill="url(#kk-tone)"/>
-
-          <!-- ===== 人物：披风（最底层） ===== -->
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round"
-                d="M134 162 C108 196 82 246 70 292 C62 322 62 350 74 374
-                   C96 368 124 352 150 334 C170 320 194 324 214 338
-                   C238 354 258 366 276 370 C286 342 278 306 260 272
-                   C240 236 230 192 228 162 Z"/>
-          <g fill="none" stroke="#ded6c2" stroke-width="2.5">
-            <path d="M106 224 C114 264 120 314 124 358"/>
-            <path d="M246 220 C242 262 240 312 240 356"/>
-          </g>
-
-          <!-- ===== 腿与鞋 ===== -->
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round" d="M154 248 L180 248 L178 412 L152 412 Z"/>
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round" d="M182 248 L208 248 L210 412 L184 412 Z"/>
-          <g stroke="#ded6c2" stroke-width="2.5" fill="none">
-            <path d="M167 262 L166 398"/>
-            <path d="M196 262 L197 398"/>
-          </g>
-          <rect x="147" y="404" width="42" height="20" rx="7" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          <rect x="183" y="404" width="42" height="20" rx="7" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-
-          <!-- ===== 礼服下摆（燕尾） ===== -->
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round" d="M128 238 L120 302 L150 288 L154 250 Z"/>
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round" d="M232 238 L240 302 L210 288 L206 250 Z"/>
-
-          <!-- ===== 手臂（被上衣盖住上端） ===== -->
-          <g transform="rotate(9 138 162)">
-            <rect x="125" y="154" width="26" height="94" rx="13" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          </g>
-          <g transform="rotate(-30 222 162)">
-            <rect x="209" y="154" width="26" height="94" rx="13" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          </g>
-
-          <!-- ===== 脖子 ===== -->
-          <rect x="170" y="136" width="20" height="28" fill="#f0e0c8" stroke="#17161c" stroke-width="2.6"/>
-
-          <!-- ===== 上衣 ===== -->
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round"
-                d="M134 158 C128 190 126 220 127 246 L180 260 L233 246
-                   C234 220 232 190 226 158 L202 172 L180 182 L158 172 Z"/>
-          <g stroke="#ded6c2" stroke-width="2.5" fill="none">
-            <path d="M152 196 C150 216 150 234 152 250"/>
-            <path d="M208 196 C210 216 210 234 208 250"/>
-          </g>
-
-          <!-- ===== 衬衫领与领带 ===== -->
-          <path fill="#fffdf6" stroke="#17161c" stroke-width="2.4" stroke-linejoin="round" d="M158 172 L180 182 L202 172 L194 165 L180 174 L166 165 Z"/>
-          <path fill="#d8382f" stroke="#17161c" stroke-width="2" stroke-linejoin="round" d="M174 174 L186 174 L184 185 L176 185 Z"/>
-          <path fill="#d8382f" stroke="#17161c" stroke-width="2" stroke-linejoin="round" d="M176 185 L184 185 L190 228 L180 244 L170 228 Z"/>
-          <circle cx="199" cy="204" r="2.8" fill="#17161c"/>
-          <circle cx="201" cy="228" r="2.8" fill="#17161c"/>
-
-          <!-- ===== 后发 ===== -->
-          <path fill="#241f2b" d="M158 96 C150 116 150 140 158 156 L168 150 C162 134 162 112 166 96 Z"/>
-          <path fill="#241f2b" d="M202 96 C210 116 210 140 202 156 L192 150 C198 134 198 112 194 96 Z"/>
-
-          <!-- ===== 脸 ===== -->
-          <path fill="#fdf6ea" stroke="#17161c" stroke-width="2.8" stroke-linejoin="round"
-                d="M180 78 C194 78 203 91 203 108 C203 127 193 137 180 140 C167 137 157 127 157 108 C157 91 166 78 180 78 Z"/>
-
-          <!-- ===== 眉、眼、鼻、嘴 ===== -->
-          <g fill="none" stroke="#17161c" stroke-width="2.6" stroke-linecap="round">
-            <path d="M162 100 C166 97 172 97 175 100"/>
-            <path d="M185 100 C188 97 194 97 198 100"/>
-          </g>
-          <path d="M163 112 C166 106 172 106 175 112 C172 118 166 118 163 112 Z" fill="#fffdf6" stroke="#17161c" stroke-width="2.2"/>
-          <ellipse cx="169" cy="112.5" rx="2.6" ry="4.2" fill="#2b4bb5"/>
-          <circle cx="170" cy="110" r="1.1" fill="#ffffff"/>
-          <path d="M185 112 C188 106 194 106 197 112 C194 118 188 118 185 112 Z" fill="#fffdf6" stroke="#17161c" stroke-width="2.2"/>
-          <ellipse cx="191" cy="112.5" rx="2.6" ry="4.2" fill="#2b4bb5"/>
-          <circle cx="192" cy="110" r="1.1" fill="#ffffff"/>
-          <path d="M180 120 L182.5 128 L178.5 128" fill="none" stroke="#17161c" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-          <path d="M173 133 C176 136.5 184 136.5 187 133" fill="none" stroke="#17161c" stroke-width="2.2" stroke-linecap="round"/>
-
-          <!-- ===== 单片眼镜（左眼）与镜链 ===== -->
-          <circle cx="169" cy="112" r="13" fill="#f6f1e3" fill-opacity=".3" stroke="#d8382f" stroke-width="2.8"/>
-          <path d="M168 125 C170 138 165 148 156 154" fill="none" stroke="#d8382f" stroke-width="1.8" stroke-linecap="round"/>
-
-          <!-- ===== 刘海 ===== -->
-          <path fill="#17161c" d="M157 108 C155 86 166 70 180 70 C194 70 205 86 203 108
-                C201 96 196 88 189 86 C185 96 175 96 170 86 C163 88 159 96 157 108 Z"/>
-          <path fill="#17161c" d="M167 86 L173 106 L179 88 Z"/>
-          <path fill="#17161c" d="M190 86 L194 104 L200 88 Z"/>
-
-          <!-- ===== 礼帽 ===== -->
-          <ellipse cx="180" cy="76" rx="54" ry="11" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          <path fill="#fbf9f3" stroke="#17161c" stroke-width="3" stroke-linejoin="round"
-                d="M146 76 L152 30 C152 24 157 20 163 20 L197 20 C203 20 208 24 208 30 L214 76 Z"/>
-          <path fill="#d8382f" d="M148 60 L212 60 L213.5 70 L146.5 70 Z"/>
-          <g fill="none" stroke="#ded6c2" stroke-width="2.5" stroke-linecap="round">
-            <path d="M158 28 L160 52"/>
-            <path d="M168 26 L169 44"/>
-          </g>
-
-          <!-- ===== 白手套与手中的扑克牌 ===== -->
-          <circle cx="125" cy="247" r="13" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          <circle cx="265" cy="237" r="13" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-          <g transform="translate(284 222) rotate(16)">
-            <rect x="-19" y="-26" width="38" height="52" rx="5" fill="#fbf9f3" stroke="#17161c" stroke-width="3"/>
-            <use href="#kk-heart" fill="#d8382f" transform="scale(0.82)"/>
-          </g>
-
-          <!-- ===== 飞出的扑克牌 ===== -->
-          <g stroke="#17161c" stroke-width="3">
-            <g transform="translate(50 128) rotate(-22)">
-              <rect x="-15" y="-20" width="30" height="40" rx="4" fill="#fbf9f3"/>
-              <use href="#kk-spade" fill="#17161c" transform="scale(0.72)"/>
-            </g>
-            <g transform="translate(96 66) rotate(15)">
-              <rect x="-13" y="-18" width="26" height="36" rx="4" fill="#fbf9f3"/>
-              <use href="#kk-heart" fill="#d8382f" transform="scale(0.62)"/>
-            </g>
-            <g transform="translate(34 268) rotate(12)">
-              <rect x="-12" y="-16" width="24" height="32" rx="4" fill="#fbf9f3"/>
-              <use href="#kk-spade" fill="#17161c" transform="scale(0.6)"/>
-            </g>
-          </g>
-          <g fill="none" stroke="#f6f1e3" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 11" opacity=".55">
-            <path d="M14 196 C26 176 36 154 42 136"/>
-            <path d="M20 336 C28 314 32 296 34 280"/>
-          </g>
-
-          <!-- ===== 前景屋顶 ===== -->
-          <rect x="0" y="424" width="360" height="56" fill="#0c0b10"/>
-          <rect x="0" y="424" width="360" height="3" fill="#f6f1e3"/>
-          <rect x="0" y="424" width="360" height="56" fill="url(#kk-tone-ink)"/>
         </g>
       </svg>
-      <span class="panel-tag">怪盗</span>
-      <span class="sfx sfx-b" aria-hidden="true">パッ</span>
+      <span class="panel-tag ink">猫</span>
+      <span class="sfx sfx-b" aria-hidden="true">ニャ</span>
     </div>
 
-    <!-- 简约头像：与立绘同源的怪盗头像，作为角色徽章叠在右上角 -->
+    <!-- 简约头像：与立绘同源的猫头，作为角色徽章叠在右上角 -->
     <div class="art-avatar">
-      <svg viewBox="0 0 48 48" role="img" aria-label="怪盗简约头像">
-        <path fill="#17161c" d="M13 22 L14.8 8.4 C15 7.2 16.1 6.2 17.3 6.2 L30.7 6.2 C31.9 6.2 33 7.2 33.2 8.4 L35 22 Z"/>
-        <path fill="#d8382f" d="M13.9 17.4 L34.1 17.4 L35 22 L13 22 Z"/>
-        <ellipse cx="24" cy="22" rx="15.5" ry="3.3" fill="#17161c"/>
-        <path fill="#fdf6ea" stroke="#17161c" stroke-width="2.4" stroke-linejoin="round"
-              d="M14.6 24 L33.4 24 L33.4 31 C33.4 37 29.3 41.4 24 41.4 C18.7 41.4 14.6 37 14.6 31 Z"/>
-        <circle cx="19.4" cy="30.6" r="5.2" fill="#fffdf6" stroke="#d8382f" stroke-width="2.4"/>
-        <circle cx="19.4" cy="30.6" r="1.7" fill="#17161c"/>
-        <ellipse cx="29" cy="30.6" rx="2.6" ry="1.8" fill="#17161c"/>
-        <path d="M21.6 35.8 C23 37 25 37 26.4 35.8" fill="none" stroke="#17161c" stroke-width="2" stroke-linecap="round"/>
+      <svg viewBox="0 0 48 48" role="img" aria-label="猫的简约头像">
+        <path fill="#17161c" d="M9.6 20.5 L6 6.6 L19.2 13.4 Z"/>
+        <path fill="#17161c" d="M38.4 20.5 L42 6.6 L28.8 13.4 Z"/>
+        <path fill="#d8382f" d="M11.6 18.2 L9.4 9.6 L17.8 13.6 Z"/>
+        <path fill="#d8382f" d="M36.4 18.2 L38.6 9.6 L30.2 13.6 Z"/>
+        <circle cx="24" cy="28" r="15.6" fill="#17161c"/>
+        <ellipse cx="18.4" cy="27" rx="3.7" ry="4.3" fill="#f6f1e3"/>
+        <ellipse cx="18.4" cy="27.4" rx="1.5" ry="3.5" fill="#2b4bb5"/>
+        <ellipse cx="29.6" cy="27" rx="3.7" ry="4.3" fill="#f6f1e3"/>
+        <ellipse cx="29.6" cy="27.4" rx="1.5" ry="3.5" fill="#2b4bb5"/>
+        <path fill="#d8382f" d="M24 32.6 L26.3 35.1 L21.7 35.1 Z"/>
+        <path d="M24 35.1 C24 37.4 21.7 38.8 19.4 38" fill="none" stroke="#f6f1e3" stroke-width="1.7" stroke-linecap="round"/>
+        <path d="M24 35.1 C24 37.4 26.3 38.8 28.6 38" fill="none" stroke="#f6f1e3" stroke-width="1.7" stroke-linecap="round"/>
+        <g stroke="#17161c" stroke-width="1.5" stroke-linecap="round">
+          <path d="M7.6 26.6 L2 24.6"/>
+          <path d="M7.4 29.8 L1.8 30.4"/>
+          <path d="M40.4 26.6 L46 24.6"/>
+          <path d="M40.6 29.8 L46.2 30.4"/>
+        </g>
       </svg>
     </div>
 
-    <p class="panel-caption">Phantom thief · 月夜の予告状</p>
+    <p class="panel-caption">Cat · 朱色の月</p>
   </div>
 </section>
 
-<div class="wrap"><div class="suit-trail" aria-hidden="true">
-  <svg class="suit" viewBox="0 0 24 24"><path d="M12 3 C12 3 4 9.5 4 14.6 C4 17.6 6 19.6 8.4 19.6 C10 19.6 11.2 18.8 11.8 17.6 L10.4 22.6 L13.6 22.6 L12.2 17.6 C12.8 18.8 14 19.6 15.6 19.6 C18 19.6 20 17.6 20 14.6 C20 9.5 12 3 12 3 Z"/></svg>
-  <svg class="suit" viewBox="0 0 24 24"><path d="M12 21 C12 21 3 14.5 3 9.4 C3 6 5.4 4 8 4 C9.9 4 11.3 5.1 12 6.4 C12.7 5.1 14.1 4 16 4 C18.6 4 21 6 21 9.4 C21 14.5 12 21 12 21 Z"/></svg>
-  <svg class="suit" viewBox="0 0 24 24"><path d="M12 3 C12 3 4 9.5 4 14.6 C4 17.6 6 19.6 8.4 19.6 C10 19.6 11.2 18.8 11.8 17.6 L10.4 22.6 L13.6 22.6 L12.2 17.6 C12.8 18.8 14 19.6 15.6 19.6 C18 19.6 20 17.6 20 14.6 C20 9.5 12 3 12 3 Z"/></svg>
+<div class="wrap"><div class="paw-trail" aria-hidden="true">
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
+  <svg class="paw" viewBox="0 0 24 24"><ellipse cx="12" cy="17" rx="6" ry="5"/><circle cx="4.4" cy="10.4" r="2.5"/><circle cx="9.6" cy="6.8" r="2.7"/><circle cx="15.4" cy="7" r="2.7"/><circle cx="20" cy="10.8" r="2.3"/></svg>
 </div></div>
 
 <section id="writing" class="wrap section" aria-labelledby="writing-title">
