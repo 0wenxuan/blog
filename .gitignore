@@ -1,0 +1,19 @@
+# Jekyll 构建产物
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# 本地依赖（本站不使用，留着以防万一）
+Gemfile.lock
+vendor/
+
+# 本地预览文件，不属于站点内容
+_preview.html
+
+# 工作区辅助文件
+.workbuddy/
+
+# 系统文件
+.DS_Store
+Thumbs.db

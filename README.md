@@ -1,18 +1,23 @@
-# Markdown 个人博客模板
+# Owen 的个人博客
 
-这是一个不需要 Node.js、npm 或 React 的 Jekyll 静态博客模板。
+一个不需要 Node.js、npm 或前端框架的 Jekyll 静态博客，构建和发布都交给 GitHub Actions。
 
-## 学生开箱步骤
+- **站点地址**：https://0wenxuan.github.io/blog/
+- **仓库**：https://github.com/0wenxuan/blog
+- **本地需要的东西**：只有一个 Git。写文章不需要安装 Ruby、Jekyll、Node.js 或 npm。
 
-1. 打开模板仓库，点击 **Use this template → Create a new repository**。
-2. 填写自己决定的仓库名称和公开/私有可见性。
-3. 创建完成后，进入自己仓库的 **Settings → Pages**，把 Source 设为 **GitHub Actions**。
-4. 等待 `Build and deploy Jekyll site` workflow 完成，再打开 Pages URL。
-5. 修改 `_config.yml` 中的名字，编辑 `index.html` 的项目卡片，并在 `_posts/` 中写自己的 Markdown 文章。
+## 文件都在哪
 
-仓库创建和 Pages 设置也可以让 Agent 操作，但必须先把目标仓库 URL 明确告诉 Agent，并在推送前检查 `git diff`。
-
-注意：仓库里的 `index.html` 是 Jekyll 模板源码，不能靠双击本地文件看到最终页面；最终 HTML 会由 GitHub Actions 生成。学生不需要在电脑上安装 Ruby、Jekyll、Node.js 或 npm。
+```text
+_config.yml                        站点标题、作者、网址、baseurl
+index.html                         首页（个人介绍 + 文章列表 + 项目卡片）
+about.md                           关于我
+_layouts/default.html              全站框架：导航、页脚
+_layouts/post.html                 文章页框架
+_posts/*.md                        所有文章
+assets/style.css                   全站样式与配色
+.github/workflows/pages.yml        自动构建并发布到 GitHub Pages
+```
 
 ## 写一篇新文章
 
@@ -48,9 +53,9 @@ tags:
 7. `git add`、`git commit`、`git push`。
 8. GitHub Actions 自动运行 Jekyll，将 Markdown 编译成 HTML 并发布到 GitHub Pages。
 
-## 第一次启用 Pages
+## 启用 Pages
 
-把仓库推送到 GitHub 后，在仓库中打开：
+`actions/configure-pages` 默认会尝试自动开启 Pages，多数情况下第一次推送就能生效。如果 workflow 报 Pages 相关的错误，手动在仓库里设置一次：
 
 ```text
 Settings → Pages → Source → GitHub Actions
@@ -58,7 +63,7 @@ Settings → Pages → Source → GitHub Actions
 
 之后每次推送到 `main`，workflow 都会重新生成网站。
 
-## 需要学生理解的概念
+## 它是怎么工作的
 
 ```text
 Markdown 文章
@@ -70,12 +75,15 @@ HTML 页面
 GitHub Pages URL
 ```
 
-学生不需要在本地安装 Ruby、Jekyll、Node.js 或 npm。构建发生在 GitHub Actions 上。
+不需要在本地安装 Ruby、Jekyll、Node.js 或 npm。构建发生在 GitHub Actions 上。
+
+注意：仓库里的 `index.html` 是 Jekyll 模板源码，双击本地文件看不到最终页面；最终 HTML 由 GitHub Actions 生成。
 
 ## Agent 提示词
 
 ```text
-/goal 这是一个 Jekyll 静态博客项目。请先读取 README、_config.yml、index.html、_layouts 和 _posts。
+/goal 这是一个 Jekyll 静态博客项目，仓库是 0wenxuan/blog，发布地址 https://0wenxuan.github.io/blog/。
+请先读取 README、_config.yml、index.html、_layouts 和 _posts。
 以后新增文章时，只在 _posts/ 中创建 YYYY-MM-DD-title.md，并使用现有 Front Matter 和 layout: post。
 不要引入 React、Vue、Node.js、npm、外部 CDN 或新的构建工具。
 修改前先列出文件和计划；修改后检查 Markdown Front Matter、文章链接、相对资源路径和 Git diff。

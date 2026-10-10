@@ -1,7 +1,14 @@
-title: 你的名字 · 个人博客
-description: 一个可以持续写作的个人博客
+title: Owen · 个人博客
+description: 记录学过的东西、做过的小项目，和一些不想忘掉的想法
 lang: zh-CN
 timezone: Asia/Singapore
+url: https://0wenxuan.github.io
+baseurl: /blog
+author:
+  name: Owen
+  github: 0wenxuan
+  # 填上下面这行，页脚就会自动出现邮件链接
+  # email: you@example.com
 markdown: kramdown
 permalink: /posts/:title/
 exclude:
