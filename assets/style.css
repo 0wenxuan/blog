@@ -1,7 +1,7 @@
 /* ============================================================
-   Owen's Blog — 日式漫画风（怪盗 × 猫）
+   Owen's Blog — 日式漫画风（怪盗）
    纯 CSS：无外部字体、无 CDN、无构建工具
-   视觉语言：墨线分镜框 · 网点纸 · 拟声词 · 扑克牌 · 猫爪印
+   视觉语言：墨线分镜框 · 网点纸 · 拟声词 · 扑克牌 · 单片眼镜
    ============================================================ */
 :root {
   /* 墨与纸 */
@@ -12,7 +12,7 @@
   --paper-2: #fffdf6;
   --panel: #ffffff;
 
-  /* 怪盗的spot color：朱红（卡牌红心 / 印章）+ 宝蓝（领带） */
+  /* 怪盗的 spot color：朱红（帽带 / 卡牌红心 / 镜框）+ 宝蓝（眸色） */
   --accent: #d8382f;
   --accent-2: #2b4bb5;
 
@@ -77,7 +77,18 @@ a { color: inherit; }
   font: 900 1.2rem/1 var(--gothic);
   letter-spacing: .02em;
 }
-.brand-mark { display: block; width: 34px; height: 34px; flex: none; }
+/* 页头品牌位：怪盗的简约头像（圆底 + 墨框） */
+.brand-mark {
+  display: block;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  padding: 3px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-2);
+}
 .brand-mark svg { display: block; width: 100%; height: 100%; }
 .brand:hover .brand-mark { transform: rotate(-6deg); transition: transform .2s ease; }
 
@@ -108,10 +119,10 @@ h3 { font-weight: 900; }
 .rule { width: 88px; height: 6px; margin: 16px 0 0; background: var(--accent); box-shadow: 10px 0 0 var(--ink); }
 
 /* ---------- 首页 Hero ---------- */
-.hero { display: grid; grid-template-columns: 1.12fr .88fr; align-items: center; gap: 56px; padding: 68px 0 78px; }
+.hero { display: grid; grid-template-columns: 1.28fr .72fr; align-items: center; gap: 60px; padding: 68px 0 78px; }
 .hero-text h1 { font-size: clamp(2.5rem, 6.6vw, 4.9rem); }
 .hero-name { padding: 0 .06em; box-shadow: inset 0 -.17em 0 var(--accent); }
-/* 两个独立元素的标记牌：怪盗 / 猫 */
+/* 角色标记牌：怪盗 */
 .hero-marks { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
 .hero-marks li {
   display: inline-flex;
@@ -177,7 +188,7 @@ h3 { font-weight: 900; }
 .button.primary { color: var(--paper); background: var(--ink); }
 .button.secondary { background: var(--panel); }
 
-/* ---------- Hero 插画：两格独立分镜（上·怪盗 / 下·猫） ---------- */
+/* ---------- Hero 插画：人物立绘分镜框 + 圆形简约头像 ---------- */
 .hero-art {
   position: relative;
   border: 4px solid var(--ink);
@@ -186,8 +197,25 @@ h3 { font-weight: 900; }
   transform: rotate(1.1deg);
 }
 .panel-art { position: relative; overflow: hidden; line-height: 0; }
-.panel-art + .panel-art { border-top: 4px solid var(--ink); }
 .panel-art svg { display: block; width: 100%; height: auto; }
+
+/* 立绘框右上角叠出的简约头像徽章（漫画角色介绍框的写法） */
+.art-avatar {
+  position: absolute;
+  top: -28px;
+  right: -20px;
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  padding: 6px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper-2);
+  box-shadow: 4px 4px 0 var(--ink);
+  transform: rotate(7deg);
+}
+.art-avatar svg { display: block; width: 100%; height: 100%; }
 
 /* 每格左上角的分镜标签 */
 .panel-tag {
@@ -231,13 +259,13 @@ h3 { font-weight: 900; }
 .section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 30px; }
 .section-heading p { max-width: 400px; margin: 0; color: var(--muted); font-size: .95rem; }
 
-/* 猫爪印分隔线 */
-.paw-trail { display: flex; align-items: center; gap: 26px; }
-.paw-trail::before,
-.paw-trail::after { content: ""; flex: 1; height: 3px; background: repeating-linear-gradient(90deg, var(--ink) 0 14px, transparent 14px 26px); }
-.paw { width: 26px; height: 26px; flex: none; fill: var(--ink); }
-.paw-trail .paw:nth-child(2) { transform: rotate(-12deg); }
-.paw-trail .paw:nth-child(3) { transform: rotate(9deg) translateY(-4px); }
+/* 扑克花色分隔线 */
+.suit-trail { display: flex; align-items: center; gap: 26px; }
+.suit-trail::before,
+.suit-trail::after { content: ""; flex: 1; height: 3px; background: repeating-linear-gradient(90deg, var(--ink) 0 14px, transparent 14px 26px); }
+.suit { width: 26px; height: 26px; flex: none; fill: var(--ink); }
+.suit-trail .suit:nth-child(2) { transform: rotate(-12deg); fill: var(--accent); }
+.suit-trail .suit:nth-child(3) { transform: rotate(9deg) translateY(-4px); }
 
 /* ---------- 卡片 = 漫画分镜格 ---------- */
 .article-grid, .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -338,7 +366,7 @@ h3 { font-weight: 900; }
 /* ---------- 响应式 ---------- */
 @media (max-width: 980px) {
   .hero { grid-template-columns: 1fr; gap: 46px; padding: 52px 0 62px; }
-  .hero-art { transform: none; max-width: 460px; }
+  .hero-art { transform: none; width: min(430px, 100%); margin: 0 auto; }
   .about { grid-template-columns: 1fr; gap: 32px; }
 }
 @media (max-width: 760px) {
@@ -351,6 +379,7 @@ h3 { font-weight: 900; }
   .bubble { padding: 18px 20px; }
   .hero-marks li { font-size: .8rem; }
   .panel-tag { top: 10px; left: 10px; padding: 2px 8px; font-size: .68rem; }
+  .art-avatar { top: -20px; right: -8px; width: 68px; height: 68px; padding: 5px; }
   .sfx { font-size: 1.15rem; }
   .post-page { padding: 48px 0; }
   .post-body { padding: 26px 22px 32px; font-size: 1.04rem; }
